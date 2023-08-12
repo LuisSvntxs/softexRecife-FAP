@@ -11,7 +11,7 @@ O código deve perguntar se deseja finalizar a votação depois do voto. Caso o 
 
 Quando a votação for finalizada, o código deverá mostrar o vencedor, aquele com o maior número de votos e, também, a quantidade de votos de cada candidato, os brancos e nulos.
 
-## Resposta 
+## Resposta
 
 ```` javascript
 var candidatoX = 0, candidatoY = 0, candidatoZ = 0, voto, votosNulos = 0, vencendor;
