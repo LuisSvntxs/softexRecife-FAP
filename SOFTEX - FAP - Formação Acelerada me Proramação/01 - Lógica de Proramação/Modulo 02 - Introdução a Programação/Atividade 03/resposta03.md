@@ -1,4 +1,4 @@
-## Atividade 
+# Atividade
 
 Desenvolva um programa que utiliza o nome de um aluno, duas notas e a quantidade de faltas que ele teve. Conclua se o aluno está aprovado ou reprovado de acordo com as especificações:
 
@@ -9,7 +9,7 @@ No sistema, todos os valores devem estar armazenados em variáveis.
 
 ## Resposta
 
- ````javascript
+ ```javascript
 
 var nome, nota, qtdFaltas,  media;
 media = 0;
@@ -30,4 +30,4 @@ if(media < 7){
 }else{
     console.log(nome + ", você está aprovado!"); 
 }
- ````
+ ```

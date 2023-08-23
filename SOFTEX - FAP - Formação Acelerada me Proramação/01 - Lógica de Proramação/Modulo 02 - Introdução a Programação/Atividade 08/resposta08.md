@@ -1,4 +1,4 @@
-## Atividade 
+# Atividade
 
 Desenvolva um código que simule uma eleição com três candidatos.
 
@@ -13,7 +13,7 @@ Quando a votação for finalizada, o código deverá mostrar o vencedor, aquele 
 
 ## Resposta
 
-```` javascript
+``` javascript
 var candidatoX = 0, candidatoY = 0, candidatoZ = 0, voto, votosNulos = 0, vencendor;
 
 while (true) {
@@ -36,8 +36,7 @@ while (true) {
  vencedor = 'X';
 if (candidatoY > candidatoX){
     vencedor = 'Y';
-} 
-if (candidatoZ > candidatoY){
+}if (candidatoZ > candidatoY){
     vencedor = 'Z';
 }
 
@@ -47,4 +46,4 @@ console.log("Total de votos para o Candidato X: " + candidatoX);
 console.log("Total de votos para o Candidato Y: " + candidatoY);
 console.log("Total de votos para o Candidato Z: " + candidatoZ);
 console.log("Total de votos nulos: " + votosNulos);
-````
+```

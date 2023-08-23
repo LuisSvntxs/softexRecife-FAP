@@ -1,4 +1,4 @@
-## Atividade 
+# Atividade
 
 Desenvolva um código que utilize as seguintes características de um veículo:
 
@@ -10,7 +10,7 @@ Com essas informações, o programa mostrará qual é a melhor categoria de habi
 
 ## Resposta
 
-`````` javascript
+``` javascript
 var quantidadeDeRodas, habilitacao, PesoBruto, qtdPessoas;
 
 quantidadeDeRodas = parseInt(prompt("Qual a quantidade de rodas do veículo? "));
@@ -34,4 +34,4 @@ if (quantidadeDeRodas == 2 || quantidadeDeRodas == 3) {
   console.log("Sua Habilitação é tipo: " + habilitacao);
 }
 
-``````
+```

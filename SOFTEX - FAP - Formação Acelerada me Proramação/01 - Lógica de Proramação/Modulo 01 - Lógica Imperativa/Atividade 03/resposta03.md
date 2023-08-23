@@ -1,4 +1,4 @@
-## Atividade
+# Atividade
 
 Em uma inscrição, o usuário informou os seguintes dados:
 
@@ -16,8 +16,6 @@ No algoritmo, descreva como será:
 
 ## Resposta
 
-
-
 ```javaScript
 var nome, cpf, rg, altura, endereço;
 
@@ -31,4 +29,5 @@ altura = 1,78;
 typeof(altura); // returns "number"
 endereço = "Rua A, 380 – Centro – Recife/PE";  
 typeof(endereço); // returns "string"
+
 ```

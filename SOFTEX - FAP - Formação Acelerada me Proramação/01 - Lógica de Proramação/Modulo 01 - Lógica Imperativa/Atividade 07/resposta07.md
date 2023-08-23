@@ -1,4 +1,4 @@
-## Atividade
+# Atividade
 
 Um aluno do ensino fundamental precisa fazer como tarefa de casa a tabuada de alguns números inteiros, como nos exemplos em anexo.
 

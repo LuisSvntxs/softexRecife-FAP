@@ -1,4 +1,4 @@
-## Ativiadde
+# Ativiadde
 
 Aristóteles, Sócrates e Platão estavam disputando uma competição de perguntas nas disciplinas de Física, Matemática e Química. Cada um obteve um primeiro lugar, um segundo lugar e um terceiro lugar.
 
@@ -12,23 +12,22 @@ Sabendo que:
 
 Informe quem ficou em 1º, 2º e 3º lugar em cada disciplina.
 
-## Resposta:
+## Resposta
 
-### Física:
+### Física
 
 1. lugar: Aristóteles
 2. lugar: Platão
 3. lugar: Sócrates
 
-### Matemática:
+### Matemática
 
 1. lugar: Platão
 2. lugar: Sócrates
 3. lugar: Aristóteles
 
-### Química:
+### Química
 
 1. lugar: Sócrates
 2. lugar: Aristóteles
 3. lugar: Platão
-

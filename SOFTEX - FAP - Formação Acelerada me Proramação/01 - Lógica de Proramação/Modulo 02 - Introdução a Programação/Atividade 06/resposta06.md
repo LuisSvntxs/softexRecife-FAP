@@ -1,6 +1,7 @@
-## Atividade 
+# Atividade
 
 Faça, uma função calculadora que os números e as operações serão feitas pelo usuário. O código deve ficar rodando infinitamente até que o usuário escolha a opção de sair. No início, o programa mostrará a seguinte lista de operações:
+
 - 1: Soma
 - 2: Subtração
 - 3: Multiplicação
@@ -15,7 +16,7 @@ Após a seleção, o sistema deve pedir para o usuário inserir o primeiro e seg
 
 ## Resposta
 
-`````` javascript
+``` javascript
 var opcao, num1, num2, resultado;
 
 function calculadora() {
@@ -56,4 +57,4 @@ function calculadora() {
 }
 calculadora();
 
-`````` 
+```

@@ -1,4 +1,4 @@
-## Atiivdade 
+# Atiivdade
 
 Construa um algoritmo que declare as seguintes variáveis: nome, idade, altura e maior_de_idade.
 
@@ -8,7 +8,7 @@ No final, imprima os valores das variáveis.
 
 ## Resposta
 
-```` javascript
+``` javascript
 var nome, idade, altura, maior_de_idade;
 
 nome = prompt("Informe o seu nome: ");
@@ -24,4 +24,5 @@ console.log(nome);
 console.log(idade);
 console.log(altura);
 console.log(maior_de_idade);
-````
+
+```

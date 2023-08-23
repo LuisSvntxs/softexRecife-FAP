@@ -1,4 +1,4 @@
-## Atividade
+# Atividade
 
 Em uma sala de aula, há vinte e cinco alunos.
 Entre eles, existem os grupos dos que gostam de Português (P) e os que gostam de Matemática (M).
