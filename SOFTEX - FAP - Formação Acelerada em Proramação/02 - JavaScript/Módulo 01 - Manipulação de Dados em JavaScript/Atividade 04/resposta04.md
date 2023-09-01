@@ -18,7 +18,7 @@ var nome, salario, idade, possuiDiploma;
 nome = prompt("Informe o seu nome: "); //Váriavel tipo String
 salario = parseFloat(prompt("Informe o seu salário: ")); //Váriavel tipo Float
 idade = parseInt(prompt("Informe a sua idade: ")) //Váriavel tipo Int
-possuiDiploma = prompt("Possui diplome de curso superior? ") //Váriavel tipo boolean
+possuiDiploma = prompt("Possui diploma de curso superior? ") //Váriavel tipo boolean
 
 // Exibindo os dados do cadastro
 console.log("Cadastro de Pessoa:");

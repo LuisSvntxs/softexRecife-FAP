@@ -7,7 +7,7 @@ console.log("bigint:", bigInt);
 console.log("string:", string);
 console.log("symbol:", symbol);
 
-// Atribuindo valores nulos
+// Atribuindo valores nulos e exibindo-os
 boolean = null;
 bigint = null;
 string = null;
