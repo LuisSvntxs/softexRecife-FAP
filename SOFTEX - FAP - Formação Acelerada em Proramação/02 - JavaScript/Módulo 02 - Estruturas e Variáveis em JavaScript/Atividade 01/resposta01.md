@@ -7,7 +7,7 @@ Diante disso, pesquise as principais vantagens dessa evolução através das esp
 
 ## Resposta
 
-- Resumi os 5 tópicos que achei mais interessante:
+- Seguem abaixo os 5 tópicos que achei mais interessante:
 
 1. **Novas Funcionalidades e Sintaxe Aprimorada:** Cada versão do ECMAScript traz recursos inovadores e uma sintaxe mais clara, permitindo códigos mais eficientes e legíveis.
 

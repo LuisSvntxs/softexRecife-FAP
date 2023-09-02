@@ -10,45 +10,47 @@ Com os conceitos aprendidos, crie um programa de calculadora que:
 ## Resposta
 
 ``` javascript
-
 var opcao, num1, num2, resultado;
 
 function calculadora() {
- while (opcao !=0) {
-  console.log("Escolha uma opção:\n1: Soma\n2: Subtração\n3: Multiplicação\n4: Divisão\n0: Sair");
 
-  opcao = parseInt(prompt());
-  
-  if (opcao == 0) {
-    console.log('Fim do programa.');
-    break;
-  } else if (opcao < 0 || opcao > 4) {
-    console.log('Essa opção não existe');
-    break;
-  }
+  opcao = prompt("Escolha uma opção:\n+: Soma\n-: Subtração\n*: Multiplicação\n/: Divisão\n");
+
   num1 = parseInt(prompt("Informe o primeiro número: "));
   num2 = parseInt(prompt("Informe o segundo número: "));
   console.log();
-  
-  if (opcao == 1) {
-    resultado = num1 + num2;
-     console.log("Resultado: " + resultado);
-     console.log();
-  } else if (opcao == 2) {
-    resultado = num1 - num2;
-     console.log("Resultado: " + resultado);
-     console.log();
-  } else if (opcao == 3) {
-    resultado = num1 * num2;
-     console.log("Resultado: " + resultado);
-     console.log();
-  } else if (opcao == 4) {
-    resultado = num1 / num2;
-     console.log("Resultado: " + resultado);
-     console.log();
-     }
- }
-}
-calculadora();
 
+  switch (opcao) {
+          case '+':
+            resultado = num1 + num2;
+            break;
+          case '-':
+            resultado = num1 - num2;
+            break;
+          case '*':
+            resultado = num1 * num2;
+            break;
+          case '/':
+            if (num2 === 0) {
+              console.log('Erro: Divisão por zero não é permitida.');
+              rl.close();
+              return;
+            }
+            resultado = num1 / num2;
+            break;
+          default:
+            console.log('opcao inválido. Por favor, insira +, -, *, ou /.');
+            rl.close();
+            return;
+        }
+        console.log("Resultado: " + resultado);
+        console.log();
+
+        if (opcao === '/') {
+            const sobra = num1 % num2;
+            console.log('Sobra:', sobra);
+          }
+    }
+  
+calculadora();
 ```

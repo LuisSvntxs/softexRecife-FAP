@@ -8,7 +8,7 @@ O segundo código é um programa que o aluno deve escrever duas notas e o retorn
 
 ## Resposta
 
-- Cálculadora de média:
+- Calculadora de média:
 
 ``` javascript
 
@@ -31,7 +31,7 @@ status = media >= 7 ? "Aprovado" : "Reprovado";
 console.log("Aluno " + status + "!");
 ```
 
-- Cálculadora de nota mínima:
+- Calculadora de nota mínima:
 
 ``` javascript
 
