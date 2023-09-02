@@ -1,6 +1,6 @@
 # SOFTEX RECIFE | FAP - Formação Acelerada em Programação
 
-## **Formação Back end**: Na formação Back end o aluno aprenderá como desenvolver arquiteturas de servidor, que interagem com aplicações web, de aplicações cliente servidor
+## **Formação Backend:** Na formação Back end o aluno aprenderá como desenvolver arquiteturas de servidor, que interagem com aplicações web, de aplicações cliente servidor
 
 # Diciplinas
 
