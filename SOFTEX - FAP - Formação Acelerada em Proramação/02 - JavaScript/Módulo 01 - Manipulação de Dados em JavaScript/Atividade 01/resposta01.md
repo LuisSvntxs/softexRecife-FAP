@@ -15,7 +15,7 @@ finalidade do botão.
 
 ### Site 01
 
-https://www.vitgbrasil.com.br/vedi/?lang=pt
+<https://www.vitgbrasil.com.br/vedi/?lang=pt>
 
 ![texto](./Site%2001.png)
 
@@ -32,30 +32,30 @@ https://www.vitgbrasil.com.br/vedi/?lang=pt
 - Segue código abaixo:
 
 ``` javascript
-function checkEnter(e, button)	{
-	var characterCode
-	if(e && e.which){ //if which property of event object is supported (Netscape)
-		e = e
-		characterCode = e.which //character code is contained in Netscape's which property
-	 }
-	 else {
-		e = event
-		characterCode = e.keyCode //character code is contained in IE's keyCode property
-	 }
-	 if(characterCode == 13){      //if generated character code is equal to ascii 13 (if enter key)
-		button.click();
-		// document.fPOs.bfFilter.click()  //submit the form
-		return false
-	 }
-	 else{
-		return true
-	 }
+function checkEnter(e, button){
+ var characterCode
+  if(e && e.which){ //if which property of event object is supported (Netscape)
+   e = e
+   characterCode = e.which //character code is contained in Netscape's which property
+  }
+  else {
+   e = event
+   characterCode = e.keyCode //character code is contained in IE's keyCode property
+  }
+  if(characterCode == 13){      //if generated character code is equal to ascii 13 (if enter key)
+   button.click();
+   // document.fPOs.bfFilter.click()  //submit the form
+   return false
+  }
+  else{
+  return true
+ }
 }
 ```
 
 ### Site 02
 
-http://www.nutes.ufpe.br/contato-nutes/
+<http://www.nutes.ufpe.br/contato-nutes/>
 
 ![texto](Site%2002.png)
 
@@ -67,7 +67,7 @@ http://www.nutes.ufpe.br/contato-nutes/
 <script type="text/javascript" src="http://www.nutes.ufpe.br/wp-content/themes/ample/js/contato/contato.js?ver=1" id="contato-js"></script>
 ```
 
-- Dentro do arquivo contato.js tem uma função chamada checarCPF que tem como objetivo verificar se um número de CPF (Cadastro de Pessoa Física) é válido ou não. A função executa uma série de cálculos com os dígitos do CPF para determinar se ele atende aos critérios de validade. 
+- Dentro do arquivo contato.js tem uma função chamada checarCPF que tem como objetivo verificar se um número de CPF (Cadastro de Pessoa Física) é válido ou não. A função executa uma série de cálculos com os dígitos do CPF para determinar se ele atende aos critérios de validade.
 
 - Segue código abaixo:
 
