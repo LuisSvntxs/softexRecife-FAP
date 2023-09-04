@@ -8,7 +8,7 @@ Codifique a solução mais eficiente para buscar o número 20 no array.
 
 ## Resposta
 
-- Buscar Linear 
+- Buscar Linear
 
 ```javascript
 // Função para realizar a busca linear em um array
@@ -35,7 +35,7 @@ if (indiceEncontrado !== -1) {
 
 ```
 
-- Busca Binária 
+- Busca Binária
 
 ```javascript
 // Função para ordenar o array em ordem crescente
