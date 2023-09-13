@@ -8,7 +8,7 @@ outros desenvolvedores possam analisá-lo.
 
 ## Resposta
 
-- index.js
+- index.html
 
 ``` html 
 <!DOCTYPE html>
