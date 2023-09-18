@@ -8,6 +8,8 @@ Codifique a solução mais eficiente para buscar o número 20 no array.
 
 ## Resposta
 
+### A melhor busca é a busca Linear, por ser um algoritmo pequeno e ele não estar ordenado. Mas seguem abaixo os exemplos nas duas formas de busca (Linear e Binária).
+
 - Buscar Linear
 
 ```javascript
