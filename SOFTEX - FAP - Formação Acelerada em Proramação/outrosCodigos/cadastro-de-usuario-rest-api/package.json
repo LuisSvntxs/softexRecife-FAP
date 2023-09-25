@@ -1,0 +1,22 @@
+{
+  "name": "cadastro_usuario",
+  "version": "1.0.0",
+  "description": "Rest API para Cadastro de Usuário utilizando Node.js, Sequelize e Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node.js",
+    "Express",
+    "Sequelize"
+  ],
+  "author": "Luis Santos",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^3.6.1",
+    "prompt-sync": "^4.2.0",
+    "sequelize": "^6.33.0",
+    "sequelize-cli": "^6.6.1"
+  }
+}
