@@ -24,7 +24,7 @@ module.exports = {
         let carro = await carroService.buscarUm(codigo);
 
         if(carro){
-            json.result = carro; //se tiver nota ele joga no json
+            json.result = carro; //se tiver carro ele joga no json
         }
 
         res.json(json);
