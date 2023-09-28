@@ -2,28 +2,20 @@ const express = require('express');
 const app = express();
 
 
-app.get('/', function(req, res) {
-    return res.send('GET funcionando.')
+app.get('/', function (req, res) {
+    return res.json([])
 })
 
-app.post('/', function(req, res) {
-    return res.json ([
-        'Projeto 1',
-        'Projeto 2',
-        'Projeto 3'
-    ])
+app.post('/', function (req, res) {
+    return res.json([])
 })
 
-app.put('/', function(req, res) {
-    return res.json ([
-        'Projeto 4'
-    ])
+app.put('/', function (req, res) {
+    return res.json([])
 })
 
-app.delete('/', function(req, res) {
-    return res.json ([
-        'Projeto 4'
-    ])
+app.delete('/', function (req, res) {
+    return res.json([])
 })
 
 app.listen(3000);
