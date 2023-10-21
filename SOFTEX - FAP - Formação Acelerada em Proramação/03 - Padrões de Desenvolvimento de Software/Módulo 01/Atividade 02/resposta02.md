@@ -21,88 +21,168 @@ de veículos.
 
 ## Resposta
 
+### Resposta em Javascript
+
 ``` javascript
 
-// Classe abstrata Veículo
+
 class Veiculo {
-    constructor(modelo, marca, cor, numeroRodas) {
-        this.modelo = modelo;
-        this.marca = marca;
-        this.cor = cor;
-        this.numeroRodas = numeroRodas;
-    }
+  constructor(modelo, marca, cor, numeroRodas) {
+    this.modelo = modelo;
+    this.marca = marca;
+    this.cor = cor;
+    this.numeroRodas = numeroRodas;
+  }
 
-    clone() {
-        // Utilizando o operador spread (...) para criar um novo objeto com os mesmos valores
-        return { ...this };
-    }
+  clone() {
+    return new this.constructor(this.modelo, this.marca, this.cor, this.numeroRodas);
+  }
 
-    represent() {
-        // Método para representar o veículo como uma string
-        return `${this.modelo} ${this.marca}, Cor: ${this.cor}, Rodas: ${this.numeroRodas}`;
-    }
+  represent() {
+    return `Modelo: ${this.modelo}, Marca: ${this.marca}, Cor: ${this.cor}, Rodas: ${this.numeroRodas}`;
+  }
 }
 
-// Subclasse Carro que herda de Veículo
+
 class Carro extends Veiculo {
-    constructor(modelo, marca, cor, numeroRodas, numeroPortas) {
-        super(modelo, marca, cor, numeroRodas);
-        this.numeroPortas = numeroPortas;
-    }
+  constructor(modelo, marca, cor, numeroRodas, numeroPortas) {
+    super(modelo, marca, cor, numeroRodas);
+    this.numeroPortas = numeroPortas;
+  }
 
-    represent() {
-        // Sobrescrevendo o método represent da classe base para incluir o número de portas
-        return `${super.represent()}, Portas: ${this.numeroPortas}`;
-    }
+  clone() {
+    return new this.constructor(this.modelo, this.marca, this.cor, this.numeroRodas, this.numeroPortas);
+  }
+
+  represent() {
+    return `${super.represent()}, Portas: ${this.numeroPortas}`;
+  }
 }
 
-// Subclasse Moto que herda de Veículo
+
 class Moto extends Veiculo {
-    constructor(modelo, marca, cor, numeroRodas, partidaEletrica) {
-        super(modelo, marca, cor, numeroRodas);
-        this.partidaEletrica = partidaEletrica;
-    }
+  constructor(modelo, marca, cor, numeroRodas, cilindradas) {
+    super(modelo, marca, cor, numeroRodas);
+    this.cilindradas = cilindradas;
+  }
 
-    represent() {
-        // Sobrescrevendo o método represent da classe base para incluir se tem partida elétrica
-        return `${super.represent()}, Partida Elétrica: ${this.partidaEletrica}`;
-    }
+  clone() {
+    return new this.constructor(this.modelo, this.marca, this.cor, this.numeroRodas, this.cilindradas);
+  }
+
+  represent() {
+    return `${super.represent()}, Cilindradas: ${this.cilindradas}`;
+  }
 }
 
-// Classe Aplicação
+
 class Aplicacao {
-    static criarVeiculos() {
-        // Criando um array com seis veículos usando o método clone
-        const veiculos = [];
-        const carroPrototype = new Carro("Sedan", "Toyota", "Preto", 4, 4);
-        const motoPrototype = new Moto("Esportiva", "Honda", "Vermelha", 2, true);
+  criarVeiculos() {
+    const veiculos = [];
 
-        for (let i = 0; i < 3; i++) {
-            veiculos.push(carroPrototype.clone());
-        }
+    const carro1 = new Carro("Sedan", "Toyota", "Azul", 4, 4);
+    const carro2 = new Carro("Hatchback", "Honda", "Vermelho", 4, 2);
+    const moto1 = new Moto("Sport", "Yamaha", "Preto", 2, 600);
+    const moto2 = new Moto("Cruiser", "Harley-Davidson", "Prata", 2, 1200);
 
-        for (let i = 0; i < 3; i++) {
-            veiculos.push(motoPrototype.clone());
-        }
+    veiculos.push(carro1, carro2, moto1, moto2);
 
-        return veiculos;
-    }
+    return veiculos;
+  }
 
-    static clonarVeiculos(veiculos) {
-        // Criando um array com clones dos veículos usando o método clone
-        return veiculos.map(veiculo => veiculo.clone());
-    }
+  cloneVeiculos(veiculos) {
+    return veiculos.map((veiculo) => veiculo.clone());
+  }
 
-    static representarVeiculos(veiculos) {
-        // Imprimindo a representação de cada veículo no array
-        veiculos.forEach(veiculo => console.log(veiculo.represent()));
-    }
+  imprimirVeiculos(veiculos) {
+    veiculos.forEach((veiculo) => {
+      console.log(veiculo.represent());
+    });
+  }
 }
 
-// Testando a aplicação
-const veiculos = Aplicacao.criarVeiculos();
-const clones = Aplicacao.clonarVeiculos(veiculos);
-Aplicacao.representarVeiculos(clones);
+const app = new Aplicacao();
+const veiculos = app.criarVeiculos();
+const clones = app.cloneVeiculos(veiculos);
 
+app.imprimirVeiculos(clones);
+
+```
+### Resposta em Typescript
+
+```typescript
+
+
+abstract class Veiculo {
+  constructor(public modelo: string, public marca: string, public cor: string, public numeroRodas: number) {}
+
+  abstract clone(): Veiculo;
+
+  represent(): string {
+    return `Modelo: ${this.modelo}, Marca: ${this.marca}, Cor: ${this.cor}, Rodas: ${this.numeroRodas}`;
+  }
+}
+
+
+class Carro extends Veiculo {
+  constructor(modelo: string, marca: string, cor: string, numeroRodas: number, public numeroPortas: number) {
+    super(modelo, marca, cor, numeroRodas);
+  }
+
+  clone(): Carro {
+    return new Carro(this.modelo, this.marca, this.cor, this.numeroRodas, this.numeroPortas);
+  }
+
+  represent(): string {
+    return `${super.represent()}, Portas: ${this.numeroPortas}`;
+  }
+}
+
+
+class Moto extends Veiculo {
+  constructor(modelo: string, marca: string, cor: string, numeroRodas: number, public cilindradas: number) {
+    super(modelo, marca, cor, numeroRodas);
+  }
+
+  clone(): Moto {
+    return new Moto(this.modelo, this.marca, this.cor, this.numeroRodas, this.cilindradas);
+  }
+
+  represent(): string {
+    return `${super.represent()}, Cilindradas: ${this.cilindradas}`;
+  }
+}
+
+
+class Aplicacao {
+  criarVeiculos(): Veiculo[] {
+    const veiculos: Veiculo[] = [];
+
+    const carro1 = new Carro("Sedan", "Toyota", "Azul", 4, 4);
+    const carro2 = new Carro("Hatchback", "Honda", "Vermelho", 4, 2);
+    const moto1 = new Moto("Sport", "Yamaha", "Preto", 2, 600);
+    const moto2 = new Moto("Cruiser", "Harley-Davidson", "Prata", 2, 1200);
+
+    veiculos.push(carro1, carro2, moto1, moto2);
+
+    return veiculos;
+  }
+
+  cloneVeiculos(veiculos: Veiculo[]): Veiculo[] {
+    return veiculos.map((veiculo) => veiculo.clone());
+  }
+
+  imprimirVeiculos(veiculos: Veiculo[]) {
+    veiculos.forEach((veiculo) => {
+      console.log(veiculo.represent());
+    });
+  }
+}
+
+const app = new Aplicacao();
+const veiculos = app.criarVeiculos();
+const clones = app.cloneVeiculos(veiculos);
+
+app.imprimirVeiculos(clones);
 
 ```

@@ -17,73 +17,112 @@ Considere que:
 
 ## Resposta
 
+### Resposta em Javascript
+
 ``` javascript
 
-// Interface comum para produtos
+
 class Computer {
-    constructor(ram, hdd, cpu) {
-        this.ram = ram;
-        this.hdd = hdd;
-        this.cpu = cpu;
-    }
+  constructor(ram, hdd, cpu, type) {
+    this.ram = ram;
+    this.hdd = hdd;
+    this.cpu = cpu;
+    this.type = type;
+  }
 
-    getRam() {
-        return this.ram;
-    }
-
-    getHdd() {
-        return this.hdd;
-    }
-
-    getCpu() {
-        return this.cpu;
-    }
-
-    getType() {
-        return "Generic Computer";
-    }
-
-    toString() {
-        return `${this.getType()} - RAM: ${this.ram}GB, HDD: ${this.hdd}GB, CPU: ${this.cpu}GHz`;
-    }
+  toString() {
+    return `Type: ${this.type}, RAM: ${this.ram}GB, HDD: ${this.hdd}GB, CPU: ${this.cpu}GHz`;
+  }
 }
 
-// Implementação concreta para PC
+
 class PC extends Computer {
-    getType() {
-        return "PC";
-    }
+  constructor(ram, hdd, cpu) {
+    super(ram, hdd, cpu, 'PC');
+  }
 }
 
-// Implementação concreta para servidor
+
 class Server extends Computer {
-    getType() {
-        return "Server";
-    }
+  constructor(ram, hdd, cpu) {
+    super(ram, hdd, cpu, 'Server');
+  }
 }
 
-// Fábrica abstrata para criar instâncias de computadores
+
 class ComputerFactory {
-    createComputer(ram, hdd, cpu) {
-        // Lógica para decidir o tipo de computador a ser criado
-        // Aqui, estou usando uma lógica simples baseada no tamanho da RAM
-        if (ram <= 8) {
-            return new PC(ram, hdd, cpu);
-        } else {
-            return new Server(ram, hdd, cpu);
-        }
+  createComputer(type, ram, hdd, cpu) {
+    if (type === 'PC') {
+      return new PC(ram, hdd, cpu);
+    } else if (type === 'Server') {
+      return new Server(ram, hdd, cpu);
+    } else {
+      throw new Error('Tipo de computador não suportado.');
     }
+  }
 }
 
-// Exemplo de uso
-const computerFactory = new ComputerFactory();
 
-// Criando um PC
-const pc = computerFactory.createComputer(8, 500, 2.5);
-console.log(pc.toString());
+const factory = new ComputerFactory();
+const myPC = factory.createComputer('PC', 8, 500, 2.5);
+const myServer = factory.createComputer('Server', 32, 1000, 3.2);
 
-// Criando um servidor
-const server = computerFactory.createComputer(16, 1000, 3.0);
-console.log(server.toString());
+console.log(myPC.toString());     
+console.log(myServer.toString()); 
+
+```
+### Resposta em Javascript
+
+```typescript
+
+interface Computer {
+  ram: number;
+  hdd: number;
+  cpu: number;
+  type: string;
+  toString(): string;
+}
+
+
+class PC implements Computer {
+  constructor(public ram: number, public hdd: number, public cpu: number) {
+    this.type = 'PC';
+  }
+
+  toString() {
+    return `Type: ${this.type}, RAM: ${this.ram}GB, HDD: ${this.hdd}GB, CPU: ${this.cpu}GHz`;
+  }
+}
+
+
+class Server implements Computer {
+  constructor(public ram: number, public hdd: number, public cpu: number) {
+    this.type = 'Server';
+  }
+
+  toString() {
+    return `Type: ${this.type}, RAM: ${this.ram}GB, HDD: ${this.hdd}GB, CPU: ${this.cpu}GHz`;
+  }
+}
+
+
+class ComputerFactory {
+  createComputer(type: string, ram: number, hdd: number, cpu: number): Computer {
+    if (type === 'PC') {
+      return new PC(ram, hdd, cpu);
+    } else if (type === 'Server') {
+      return new Server(ram, hdd, cpu);
+    } else {
+      throw new Error('Tipo de computador não suportado.');
+    }
+  }
+}
+
+const factory = new ComputerFactory();
+const myPC = factory.createComputer('PC', 8, 500, 2.5);
+const myServer = factory.createComputer('Server', 32, 1000, 3.2);
+
+console.log(myPC.toString());     
+console.log(myServer.toString());
 
 ```
