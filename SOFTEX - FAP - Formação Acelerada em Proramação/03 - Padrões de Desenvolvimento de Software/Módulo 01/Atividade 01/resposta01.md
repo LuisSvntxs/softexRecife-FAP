@@ -71,7 +71,7 @@ console.log(myPC.toString());
 console.log(myServer.toString()); 
 
 ```
-### Resposta em Javascript
+### Resposta em Typescript
 
 ```typescript
 
